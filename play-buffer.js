@@ -7,7 +7,7 @@ function PlayBuffer() {
 
   function playBuffer({ audioContext, buffer }, done) {
     if (sourceNode) {
-      sourceNode.stop();
+//      sourceNode.stop();
     }
     sourceNode = audioContext.createBufferSource();
     sourceNode.connect(audioContext.destination);

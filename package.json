@@ -33,6 +33,7 @@
     "basic-browser-request": "^9.0.1",
     "call-next-tick": "^2.0.1",
     "collect-in-channel": "^3.0.1",
-    "lodash.curry": "^4.1.1"
+    "lodash.curry": "^4.1.1",
+    "request-body-mover": "^1.0.1"
   }
 }

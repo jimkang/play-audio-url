@@ -12,7 +12,7 @@ pushall:
 	git push origin master && npm publish
 
 run:
-	wzrd demo-app.js:demo.js -- \
+	wzrd demo-app.js:demo.js --https -- \
 		-d \
 		$(TRANSFORM_SWITCH)
 

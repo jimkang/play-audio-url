@@ -6,7 +6,7 @@ document.getElementById('activate-button').addEventListener('click', play);
 
 function play() {
   playAudioURL(
-    { url: 'https://jimkang.com/flame-buddy-sword-assistant/audio/npsRec.ogg' },
+    { url: 'audio/npsRec.ogg' },
     sb(setUpStop, handleError)
   );
 }
