@@ -1,6 +1,6 @@
 {
   "name": "play-audio-url",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An abstraction for playing audio via an HTMLAudioElement.",
   "main": "index.js",
   "repository": {
