@@ -5,7 +5,7 @@ var sb = require('standard-bail')();
 document.getElementById('activate-button').addEventListener('click', play);
 
 function play() {
-  playAudioURL({ url: 'audio/npsRec.ogg' }, sb(setUpStop, handleError));
+  playAudioURL({ url: 'audio/npsRec.mp3' }, sb(setUpStop, handleError));
 }
 
 function setUpStop({ htmlPlayer, bufferPlayer }) {
