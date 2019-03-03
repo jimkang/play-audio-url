@@ -7,9 +7,14 @@ var curry = require('lodash.curry');
 
 var acSingleton = require('audio-context-singleton')();
 var bufferPlayer;
+var htmlPlayer;
 
 function playAudioURL({ url, sampleRate }, playCb) {
-  var htmlPlayer = new Audio(url);
+  if (htmlPlayer) {
+    htmlPlayer.src = url;
+  } else {
+    htmlPlayer = new Audio(url);
+  }
   htmlPlayer.play().then(passPlayer, playMediaFileWithBuffer);
   //playMediaFileWithBuffer();
 
