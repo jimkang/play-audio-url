@@ -11,7 +11,7 @@ function play() {
   );
 }
 
-function setUpStop({ htmlPlayer, audioContext }) {
+function setUpStop({ htmlPlayer, bufferPlayer}) {
   document.getElementById('stop-button').removeEventListener('click', stop);
   document.getElementById('stop-button').addEventListener('click', stop);
 
@@ -19,7 +19,7 @@ function setUpStop({ htmlPlayer, audioContext }) {
     if (htmlPlayer) {
       htmlPlayer.pause();
     } else {
-      audioContext.stop();
+      bufferPlayer.stop();
     }
   }
 }

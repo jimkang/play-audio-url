@@ -16,14 +16,14 @@ Usage
     playAudioURL({ url: 'https://whatever.com/some-sound.ogg' }, onPlay);
 
     // playAudioURL passes back an htmlPlayer if it was able to play
-    // via an HTMLAudioElement, otherwise passes an AudioContext.
-    function onPlay(error, { htmlPlayer, audioContext }) {
+    // via an HTMLAudioElement, otherwise passes an AudioContext-based player.
+    function onPlay(error, { htmlPlayer, bufferPlayer }) {
       if (error) {
         console.log(error);
       } else if (htmlPlayer) {
         setTimeout(player.pause, 10000);
-      } else if (audioContext) {
-        setTimeout(audioContext.stop, 10000);
+      } else if (bufferPlayer) {
+        setTimeout(bufferPlayer.stop, 10000);
       }
     }
 
