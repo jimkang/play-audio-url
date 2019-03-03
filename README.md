@@ -1,9 +1,15 @@
 play-audio-url
 ==================
 
-Plays audio when it's possible to play it via an HTMLAudioElement (as of 3/1/2019, this will work in Firefox and Chrome) and falls back to downloading the audio file and playing via an AudioContext if it can't (as of 3/1/2019, Safari doesn't allow HTMLAudioElement to play programmatically, even if the user has already clicked on the web page).
+An abstraction for playing audio via an HTMLAudioElement.
 
 [Here's a demo.](https://jimkang.com/play-audio-url/)
+
+Why
+---
+
+[It's mostly due to a misunderstanding.](https://jimkang.com/weblog/articles/weasley-debugging/) It's still a nice, if inessential, convenient way to play through an HTMLAudioElement.
+
 
 Installation
 ------------
