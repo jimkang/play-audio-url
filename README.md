@@ -14,6 +14,8 @@ Usage
     var playAudioURL = require('play-audio-url');
 
     playAudioURL({ url: 'https://whatever.com/some-sound.ogg' }, onPlay);
+    // You can also pass sampleRate here.
+    // e.g.: { url: 'https://o.k/guy.mp3', sampleRate: 22050 } 
 
     // playAudioURL passes back an htmlPlayer if it was able to play
     // via an HTMLAudioElement, otherwise passes an AudioContext-based player.

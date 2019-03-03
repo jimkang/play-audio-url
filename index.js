@@ -8,7 +8,7 @@ var curry = require('lodash.curry');
 var acSingleton = require('audio-context-singleton')();
 var bufferPlayer;
 
-function playAudioURL({ url }, playCb) {
+function playAudioURL({ url, sampleRate }, playCb) {
   var htmlPlayer = new Audio(url);
   htmlPlayer.play().then(passPlayer, playMediaFileWithBuffer);
   //playMediaFileWithBuffer();
@@ -23,7 +23,7 @@ function playAudioURL({ url }, playCb) {
     var tasks = [];
     if (!channel.bufferPlayer) {
       tasks = [
-        acSingleton.getCurrentContext,
+        curry(acSingleton.getNewContext)({ sampleRate }),
         Collect({ props: [[createBufferPlayer, 'bufferPlayer']] }),
         downloadFile
       ];
