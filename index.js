@@ -18,10 +18,10 @@ function playAudioURL({ url, sampleRate }, playCb) {
   }
 
   function playMediaFileWithBuffer() {
-    var channel = { url, bufferPlayer };
+    var channel = { url };
     var Collect = CollectCtor({ channel });
     var tasks = [];
-    if (!channel.bufferPlayer) {
+    if (!bufferPlayer) {
       tasks = [
         curry(acSingleton.getNewContext)({ sampleRate }),
         Collect({ props: [[createBufferPlayer, 'bufferPlayer']] }),
@@ -50,7 +50,7 @@ function playAudioURL({ url, sampleRate }, playCb) {
     }
   }
 
-  function playBuffer({ bufferPlayer, buffer }, done) {
+  function playBuffer({ buffer }, done) {
     bufferPlayer.play({ buffer }, done);
   }
 }
