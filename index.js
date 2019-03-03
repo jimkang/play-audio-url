@@ -25,16 +25,15 @@ function playAudioURL({ url }, playCb) {
       tasks = [
         acSingleton.getCurrentContext,
         Collect({ props: [[createBufferPlayer, 'bufferPlayer']] }),
-        downloadFile,
+        downloadFile
       ];
     } else {
-      tasks = [ curry(downloadFile)(channel) ];
+      tasks = [curry(downloadFile)(channel)];
     }
     tasks = tasks.concat([
-        Collect({ props: [[x => x, 'buffer']] }),
-        playBuffer,
-        //Collect({ props: []}) // Pass the channel to the next callback, even if we're not adding to it.
-      ]);
+      Collect({ props: [[x => x, 'buffer']] }),
+      playBuffer
+    ]);
 
     waterfall(tasks, passBufferPlayer);
   }
@@ -57,7 +56,7 @@ function playAudioURL({ url }, playCb) {
 }
 
 function createBufferPlayer(audioCtx) {
-  return bufferPlayer = AudioBufferPlayer({ audioCtx });
+  return (bufferPlayer = AudioBufferPlayer({ audioCtx }));
 }
 
 module.exports = playAudioURL;
